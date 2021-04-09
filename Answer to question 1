@@ -1,0 +1,58 @@
+  public class ConsecutiveOne
+    {
+        static void Main(String[] args)
+        {
+            int[] a = new int[] { 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1 };
+            int[] b = new int[] { 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0 };
+            int getAMaxLength(int n)
+            {
+                int count = 0; //intitialize count
+                int result = 0;
+                for (int i = 0; i < n; i++)
+                {
+                    // Reset count when 0 is found
+                    if (a[i] == 0)
+                    {
+                        count = 0;
+                    }
+                    // If 1 is found, increment count
+                    // and update result if count becomes
+                    // more.
+                    else
+                    {
+                        count += 1;//increase count
+                        result = count;
+                    }
+                }
+
+                return result;
+            }
+
+            int getBMaxLength(int n)
+            {
+                int count = 0; //intitialize count
+                int result = 0;
+                for (int i = 0; i < n; i++)
+                {
+                    // Reset count when 0 is found
+                    if (b[i] == 0)
+                    {
+                        count = 0;
+                    }
+
+                    // If 1 is found, increment count
+                  
+                    else
+                    {
+                        count += 1;//increase count
+                        result = count;
+                    }
+                }
+
+                return result;
+            }
+
+            Console.WriteLine(getAMaxLength(a.Length));
+            Console.WriteLine(getBMaxLength(b.Length));
+        }
+    }
